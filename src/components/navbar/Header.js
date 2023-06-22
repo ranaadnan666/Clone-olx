@@ -16,7 +16,7 @@ import Select from '@mui/material/Select';
 import { Link } from "react-router-dom";
 import { Button,Stack, Typography } from "@mui/material";
 import { useScrollTrigger } from '@mui/material';
-
+import MapsUgcOutlinedIcon from '@mui/icons-material/MapsUgcOutlined';
 import BusinessIcon from '@mui/icons-material/Business';
 import DialogUser from "../Dialog/Dialog";
 const drawerWidth = 300;
@@ -215,7 +215,7 @@ function Header(props) {
   </Stack>
    </Stack>
        <Stack direction={"row"} columnGap={2}>
-         
+<Link style={{color:"black"}} to="/chat">   <MapsUgcOutlinedIcon sx={{fontSize:"35px"}}/>  </Link>    
 <DialogUser title={"Login"}/>
 <DialogUser title={"Sell"}/>
        </Stack>

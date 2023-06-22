@@ -6,6 +6,7 @@ import Head from '../pages/Head/Head'
 import Product from '../pages/Product/Product'
 import Foot from '../pages/footer/Foot'
 import ProductFilter from '../pages/FilteredProduct/ProductFilter'
+import Chat from '../pages/chat/Chat'
 
 const SetRoute = () => {
   return (
@@ -16,6 +17,7 @@ const SetRoute = () => {
         <Route path="/" element={ <MainHome/> } />
         <Route path="/detail" element={ <Product/> } />
         <Route path="/filtered" element={ <ProductFilter/> } />
+        <Route path="/chat" element={ <Chat/> } />
         
         </Routes>
         <Foot/>

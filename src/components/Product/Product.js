@@ -18,7 +18,8 @@ function Product() {
         sx={{
           width: {
             xs: "95%",
-            md: "65%",
+            md:"75%",
+            lg: "70%",
           },
           mx: "auto",
           paddingBottom: "50px",
@@ -42,7 +43,7 @@ function Product() {
         <Grid container sx={{ width: "98%", mx: "auto" }} spacing={2}>
           {saledata.map((item) => {
             return (
-              <Grid item md={2.4} sm={6} xs={12}>
+              <Grid item xl={3}  md={4} sm={6} xs={12}>
                 <Link
                   to="/detail"
                   style={{
@@ -64,7 +65,7 @@ function Product() {
         <Grid container sx={{ width: "98%", mx: "auto" }} spacing={2} mt={2}>
           {saledata.map((item) => {
             return (
-              <Grid item md={2.4} sm={6} xs={12}>
+              <Grid item xl={3}  md={4} sm={6} xs={12}>
                 <Link
                   to="/detail"
                   style={{
