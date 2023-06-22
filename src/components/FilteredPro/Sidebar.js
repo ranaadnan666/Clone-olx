@@ -1,9 +1,9 @@
-import { Button, Grid, Stack } from "@mui/material";
+import { Stack } from "@mui/material";
 import React from "react";
 
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
-import { Brand, Size, Dress, Color } from "./ListData";
+import {  Dress } from "./ListData";
 import CheckboxList from "./CheckBoxList";
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
@@ -34,17 +34,17 @@ const Sidebar = () => {
       </Stack>
       <Box sx={{width:"100%"}} >
       <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Age</InputLabel>
+        <InputLabel id="demo-simple-select-label">Pakistan</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           value={age}
-          label="Age"
+          label="Pakistan"
           onChange={handleChange1}
         >
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
+     <MenuItem value={10}>Isb</MenuItem>
+          <MenuItem value={20}>Lahore</MenuItem>
+          <MenuItem value={30}>Multan</MenuItem>
         </Select>
       </FormControl>
     </Box>

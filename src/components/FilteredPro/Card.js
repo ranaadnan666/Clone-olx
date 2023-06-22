@@ -8,12 +8,19 @@ import Button from '@mui/material/Button';
 import img from "../../images/mpbile1.jpg"
 import ChatIcon from '@mui/icons-material/Chat';
 import CallIcon from '@mui/icons-material/Call';
+import { Link } from 'react-router-dom';
 export default function AreaCard() {
   return (
     <Stack rowGap={4}>
  {
      [1,2,3,4,5,6].map((item)=>{
         return(
+          <Link
+          to="/detail"
+          style={{
+            textDecoration: "none",
+          }}
+        >
             <Card key={item} sx={{width:"100%"}} >
             <CardActionArea>
        <Stack direction={"row"} >
@@ -51,6 +58,7 @@ export default function AreaCard() {
        </Stack>
             </CardActionArea>
           </Card>
+          </Link>
         )
      })
     }

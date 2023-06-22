@@ -6,7 +6,7 @@ import AreaCard from "./Card";
 
 const DetailedPro = () => {
   return (
-    <Grid container spacing={1} width={{xs:"100%",md:"70%"}} mx={"auto"} >
+    <Grid container spacing={1} width={{xs:"100%",md:"90%",lg:"80%",xl:"70%"}} mx={"auto"} >
           {/* ============== Sidebar section ================= */}
 
       <Grid xs={1} sm={0} md={3} mt={4} display={{xs:"none",md:"block"}}>
