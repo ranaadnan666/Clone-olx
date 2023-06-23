@@ -7,6 +7,8 @@ import Product from '../pages/Product/Product'
 import Foot from '../pages/footer/Foot'
 import ProductFilter from '../pages/FilteredProduct/ProductFilter'
 import Chat from '../pages/chat/Chat'
+import ProfileMain from '../pages/profile/Profile'
+import Setting from '../pages/setting/Setting'
 
 const SetRoute = () => {
   return (
@@ -18,6 +20,8 @@ const SetRoute = () => {
         <Route path="/detail" element={ <Product/> } />
         <Route path="/filtered" element={ <ProductFilter/> } />
         <Route path="/chat" element={ <Chat/> } />
+        <Route path="/profile" element={ <ProfileMain/> } />
+        <Route path="/setting" element={ <Setting/> } />
         
         </Routes>
         <Foot/>

@@ -78,7 +78,7 @@ const Sidebar = () => {
                         // direction={"row"}
                         // justifyContent={"space-between"}
                         // alignItems={"center"}
-                        p={{ xs: "5px", md: "0px 10px" }}
+                        p={{ xs: "5px", md: "10px" }}
                         sx={{
                             borderRadius: "10px",
                             backgroundColor: "#EEF3F8",
@@ -86,7 +86,7 @@ const Sidebar = () => {
                           
                         }}
                     >
-                        <h2>INBOX</h2>
+                        <h3>INBOX</h3>
                      <p> QUICK FILTERS</p>
                     
                     </Stack>

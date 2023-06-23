@@ -19,7 +19,7 @@ const Inbox = () => {
         padding={"20px 0px"}
         width={{ xs: "100%", sm: "90%", md: "95%" }}
         mx="auto"
-        height="86vh"
+        height="80vh"
       >
         <Sidebar/>
 

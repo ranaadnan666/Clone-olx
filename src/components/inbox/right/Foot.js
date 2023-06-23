@@ -102,7 +102,7 @@ const Foot = () => {
                 cursor: "pointer",
                 padding: "4px",
                 borderRadius: "50%",
-                fontSize: { xs: "10px", md: "15px", lg: "20px" },
+                fontSize: { xs: "10px", md: "15px", lg: "30px" },
                 color: "#666666",
                 "&:hover": {
                   backgroundColor: "lightgray",
@@ -115,7 +115,7 @@ const Foot = () => {
                 cursor: "pointer",
                 padding: "4px",
                 borderRadius: "50%",
-                fontSize: { xs: "10px", md: "15px", lg: "20px" },
+                fontSize: { xs: "10px", md: "15px", lg: "30px" },
                 color: "#666666",
                 "&:hover": {
                   backgroundColor: "lightgray",
@@ -128,7 +128,7 @@ const Foot = () => {
                 cursor: "pointer",
                 padding: "4px",
                 borderRadius: "50%",
-                fontSize: { xs: "10px", md: "15px", lg: "20px" },
+                fontSize: { xs: "10px", md: "15px", lg: "40px" },
                 color: "#666666",
                 "&:hover": {
                   backgroundColor: "lightgray",
@@ -141,7 +141,7 @@ const Foot = () => {
                 cursor: "pointer",
                 padding: "4px",
                 borderRadius: "50%",
-                fontSize: { xs: "10px", md: "15px", lg: "20px" },
+                fontSize: { xs: "10px", md: "15px", lg: "30px" },
                 color: "#666666",
                 "&:hover": {
                   backgroundColor: "lightgray",
@@ -155,7 +155,7 @@ const Foot = () => {
             sx={{
               cursor: "pointer",
               padding: "4px",
-              fontSize: { xs: "10px", md: "15px", lg: "20px" },
+              fontSize: { xs: "10px", md: "15px", lg: "30px" },
               color: "#666666",
               "&:hover": {
                 color: "skyblue",

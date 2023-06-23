@@ -4,7 +4,7 @@ import { Box } from '@mui/material'
 
 const Chat = () => {
   return (
-    <Box sx={{width:"70%"}} mx={"auto"}>
+    <Box sx={{width:{xs:"90%",md:"70%"}}} mx={"auto"}>
         <Inbox/>
     </Box>
   )

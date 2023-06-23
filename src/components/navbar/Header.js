@@ -13,15 +13,38 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import { Link } from "react-router-dom";
-import { Button,Stack, Typography } from "@mui/material";
+import { Link, NavLink } from "react-router-dom";
+import { Button,Menu,Stack, Typography } from "@mui/material";
 import { useScrollTrigger } from '@mui/material';
-import MapsUgcOutlinedIcon from '@mui/icons-material/MapsUgcOutlined';
+import Avatar from '@mui/material/Avatar';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
 import BusinessIcon from '@mui/icons-material/Business';
+import SettingsIcon from "@mui/icons-material/Settings";
 import DialogUser from "../Dialog/Dialog";
+import LogoutIcon from '@mui/icons-material/Logout';
+
 const drawerWidth = 300;
 
 function Header(props) {
+
+  const settings = [
+    {
+        id: 1,
+  
+        icon:<AccountCircleIcon/>,
+        title: "Profile",
+        url: "/profile",
+    },
+{
+      id: 4,
+      icon:<SettingsIcon/>,
+      title: "Settings",
+      url: "/setting",
+    },
+  
+  
+  ]
 
   const trigger = useScrollTrigger({
     threshold: 200, // Change this threshold as needed
@@ -29,7 +52,8 @@ function Header(props) {
 
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-
+  // const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const [age, setAge] = React.useState('');
 
@@ -38,6 +62,16 @@ function Header(props) {
   };
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
+  };
+
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
+  };
+
+
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
   };
 
   const drawer = (
@@ -215,9 +249,156 @@ function Header(props) {
   </Stack>
    </Stack>
        <Stack direction={"row"} columnGap={2}>
-<Link style={{color:"black"}} to="/chat">   <MapsUgcOutlinedIcon sx={{fontSize:"35px"}}/>  </Link>    
+<Link style={{color:"black"}} to="/chat">   <ChatOutlinedIcon  sx={{fontSize:"38px",color:"#1565C0"}}/>  </Link>    
 <DialogUser title={"Login"}/>
-<DialogUser title={"Sell"}/>
+{/* <DialogUser title={"Sell"}/> */}
+
+
+
+<Box sx={{ flexGrow: 0 }}>
+      
+              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+              <Avatar alt="Remy Sharp" src="https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=1600" />
+              </IconButton>
+     
+            <Menu
+              // sx={{ mt: '45px' }}
+              // id="menu-appbar"
+              anchorEl={anchorElUser}
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              open={Boolean(anchorElUser)}
+              onClose={handleCloseUserMenu}
+              sx={{
+                mt: "2.8rem",
+                ".MuiMenu-paper": {
+                  width: { xs: "60%", sm: "40%", md: "15%" },
+                  borderRadius:"10px"
+
+                },
+              }}
+              id="basic-menu"
+         
+              MenuListProps={{
+                "aria-labelledby": "basic-button",
+              }}
+            >
+      
+      <Stack
+                  direction="column"
+                  mb={1}
+                  p={1}
+                  width="90%"
+                  mx="auto"
+                  boxShadow="0px 1px 10px silver"
+                  borderRadius="10px"
+                  
+                  
+                >
+                  <Link
+                    to={`/new/userprofile`}
+                    style={{ textDecoration: "none", color: "black" }}
+                    onClick={handleCloseUserMenu}
+                  >
+                    <Stack
+                      direction="row"
+                      alignItems="center"
+                      columnGap={2} 
+                      
+                      sx={{
+                        padding: { xs: "0.5rem 0.5rem", md: "0.5rem 1rem"  },
+                        width: { xs: "90%" },
+                        borderRadius: "5px",
+                        mx: "auto",
+                        "&:hover": {
+                          backgroundColor: "#F1F3F4",
+                        },
+                      }}
+                    >
+                      {/* {user?.data?.show_online ? (
+                        <StyledBadge
+                          overlap="circular"
+                          anchorOrigin={{
+                            vertical: "bottom",
+                            horizontal: "right",
+                          }}
+                          variant="dot"
+                        >
+                          <Avatar alt="Remy Sharp" src={profilePic} />
+                        </StyledBadge>
+                      ) : ( */}
+                        <Avatar alt="Remy Sharp" src=""/>
+                      {/* )} */}
+                      <p
+                        style={{
+                          fontWeight: "bold",
+                          textTransform: "capitalize",
+                        }}
+                      >
+                       Rana &nbsp;Adnan
+                      </p>
+                    </Stack>
+                    <Divider sx={{ margin: "10px 0px" }} />
+                  </Link>
+                </Stack>
+              {settings.map((setting) => (
+                <MenuItem key={setting.id} onClick={handleCloseUserMenu}>
+                  <NavLink style={{textDecoration:"none",color:"black",width:"100%"}} to={setting.url}>
+                  <Stack        direction="row"
+                  alignItems="center"
+                  columnGap={2}
+           
+                  sx={{
+                    padding: "0.5rem 1rem",
+                    cursor: "pointer",
+                    width: "90%",
+                    borderRadius: "5px",
+                    mx: "auto",
+                    "&:hover": {
+                      backgroundColor: "#F1F3F4",
+                    },
+                  }} textAlign="center">
+                    {setting.icon}
+                    {setting.title}
+                    </Stack>
+                 
+                  </NavLink>
+                </MenuItem>
+              ))}
+                {
+          
+                  <Stack        direction="row"
+                  alignItems="center"
+                  columnGap={2}
+             
+                  sx={{
+                    padding: "0.5rem 1rem",
+                    cursor: "pointer",
+                    width: "80%",
+                    fontWeight:"550",
+                    borderRadius: "5px",
+                    mx: "auto",
+                    "&:hover": {
+                      backgroundColor: "#F1F3F4",
+                    },
+                  }} textAlign="center">
+                    <span><LogoutIcon/></span>
+                   LogOut
+                    </Stack>
+                }
+            </Menu>
+          </Box>
+
+
+
+
        </Stack>
       </Box>
           <IconButton
